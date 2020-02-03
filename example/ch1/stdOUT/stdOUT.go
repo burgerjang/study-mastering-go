@@ -11,7 +11,7 @@ func main() {
 	if len(arguments) == 1 {
 		myString = "Please give me one argument!"
 	} else {
-		myString = arguments[1]
+		myString = arguments[0]
 	}
 
 	io.WriteString(os.Stdout, myString)
