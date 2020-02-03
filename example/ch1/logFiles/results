@@ -1,0 +1,7 @@
+# ../go/bin/logFiles 
+
+Broadcast message from systemd-journald@seung (Mon 2020-02-03 08:44:38 UTC):
+
+logFiles[13126]: Some program![13126]: 2020/02/03 08:44:38 LOG_MAIL: Logging in GO!
+
+Will you see this?
