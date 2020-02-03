@@ -10,11 +10,18 @@ else
     FZF=true
 fi
 
-ls example/*/*/* practice/*/*/* | awk -F' ' '{print $0}' > list
+ls -d example/*/* practice/*/* | awk -F' ' '{print $0}' > list
 
 SELECTED=$(cat list | fzf --reverse --no-mouse --height=15 --bind=left:page-up,right:page-down)
+echo $SELECTED
 
-go get -v github.com/burgerjang/${SELECTED}
+## for using private git
+# env GIT_TERMINAL_PROMPT=1 go get ...
+
+GOURL=$(git config --get remote.origin.url | head -1 | sed -e "s/https:\/\///" | sed -e "s/.git/\//")
+
+
+go get -v ${GOURL}/${SELECTED}
 
 rm -f list
 
