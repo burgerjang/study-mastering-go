@@ -12,13 +12,16 @@ func main() {
 	f=os.Stdin
 	defer f.Close()
 
-	sum := 0
+	avg, sum := float64(0), float64(0)
+	cnt := float64(1)
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
-		n, err := strconv.Atoi(scanner.Text())
+		n, err := strconv.ParseFloat(scanner.Text(),64)
 		if err == nil {
 			sum += n
-			fmt.Println("Thu sum is = ",sum)
+			avg = sum/cnt
+			fmt.Println("Thu average is = ",avg)
+			cnt+=1
 		}
 	}
 }
