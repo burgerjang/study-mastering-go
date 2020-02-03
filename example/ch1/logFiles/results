@@ -1,7 +1,22 @@
-# ../go/bin/logFiles 
+$ ../go/bin/logFiles 
 
 Broadcast message from systemd-journald@seung (Mon 2020-02-03 08:44:38 UTC):
 
 logFiles[13126]: Some program![13126]: 2020/02/03 08:44:38 LOG_MAIL: Logging in GO!
 
 Will you see this?
+
+
+
+===
+$ grep LOG /var/log/syslog 
+Feb  3 08:43:57 seung logFiles[13120]: 2020/02/03 08:43:57 LOG_INFO + LOG_LOCAL7: Logging in Go!
+Feb  3 08:43:57 seung Some program![13120]: 2020/02/03 08:43:57 LOG_MAIL: Logging in GO!
+Feb  3 08:44:38 seung logFiles[13126]: 2020/02/03 08:44:38 LOG_INFO + LOG_LOCAL7: Logging in Go!
+Feb  3 08:44:38 seung Some program![13126]: 2020/02/03 08:44:38 LOG_MAIL: Logging in GO!
+Feb  3 08:45:49 seung logFiles[13272]: 2020/02/03 08:45:49 LOG_INFO + LOG_LOCAL7: Logging in Go!
+Feb  3 08:45:49 seung Some program![13272]: 2020/02/03 08:45:49 LOG_MAIL: Logging in GO!
+Feb  3 08:46:10 seung logFiles[13351]: 2020/02/03 08:46:10 LOG_INFO + LOG_LOCAL7: Logging in Go!
+Feb  3 08:46:10 seung Some program![13351]: 2020/02/03 08:46:10 LOG_MAIL: Logging in GO!
+Feb  3 08:46:43 seung logFiles[13676]: 2020/02/03 08:46:43 LOG_INFO + LOG_LOCAL7: Logging in Go!
+Feb  3 08:46:43 seung Some program![13676]: 2020/02/03 08:46:43 LOG_MAIL: Logging in GO!
