@@ -1,0 +1,20 @@
+#!/bin/bash
+
+command -v fzf
+
+if [ $? -eq 1 ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    exit 0
+else
+    FZF=true
+fi
+
+ls example/*/*/* practice/*/*/* | awk -F' ' '{print $0}' > list
+
+SELECTED=$(cat list | fzf --reverse --no-mouse --height=15 --bind=left:page-up,right:page-down)
+
+go get -v github.com/burgerjang/${SELECTED}
+
+rm -f list
+
