@@ -8,7 +8,7 @@ import (
 
 func main(){
 	sysLog, err := syslog.New(syslog.LOG_ALERT|syslog.LOG_MAIL, "Some program!")
-	if err != nill {
+	if err != nil {
 		log.Fatal(err)
 	} else {
 		log.SetOutput(sysLog)
