@@ -2,3 +2,6 @@ bin/
 src/
 pkg/
 .vscode
+
+*.o
+*.h
