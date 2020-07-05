@@ -26,7 +26,7 @@ else
 
     GOURL=$(git config --get remote.origin.url | head -1 | sed -e "s/https:\/\///" | sed -e "s/.git/\//")
 
-    go get -v ${GOURL}/${SELECTED}
+    go run ${GOURL}/${SELECTED}
 fi
 
 rm -f list
